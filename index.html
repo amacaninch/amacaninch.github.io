@@ -22,23 +22,13 @@ function showInfo(data, tabletop) {
    
    var strStatus = "";
    
-for (var i = 0; i < data.length; i++) {
+	for (var i = 0; i < data.length; i++) {
         console.log(data[i].status);
          strStatus += data[i].status +"<br>";
     }
     
    document.getElementById("demo").innerHTML = strStatus;
    
-   // create inner HTML for div.menu
-            //var statusHtml = '';
-          //  data.status.elements.forEach(function(element) {
-          //      statusHtml += '<h3>' + element.watts + '</h3>' + 
-          //                  '<h4>' + element.status + '</h4>' + 
-          //                  '<p>' + element.local + '</p>';
-          //  })
-          //  // replace inner HTML of div.menu
-          //  var statusElement = document.getElementsByClassName("menu")[0];
-          //  statusElementElement.innerHTML = statusHtml;
 }
 
   window.addEventListener('DOMContentLoaded', init)
