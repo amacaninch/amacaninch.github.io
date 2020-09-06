@@ -20,10 +20,14 @@ function showInfo(data, tabletop) {
 
    console.log(data);
    
+   var strStatus = "";
+   
 for (var i = 0; i < data.length; i++) {
         console.log(data[i].status);
-        document.getElementById("demo").innerHTML = data[i].status;
+         strStatus += data[i].status +"<br>";
     }
+    
+   document.getElementById("demo").innerHTML = strStatus;
    
    // create inner HTML for div.menu
             //var statusHtml = '';
