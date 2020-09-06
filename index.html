@@ -18,11 +18,9 @@
     var tr;
     for (var i = 0; i < data.length; i++) {
       tr = $('<tr/>');
-      tr.append("<td>" + data[i].Destinations + "</td>");
-      tr.append("<td>" + data[i].Hospitality + "</td>");
-      tr.append("<td>" + data[i].Taxi + "</td>");
-            tr.append("<td>" + data[i].Hotel + "</td>");
-            tr.append("<td>" + data[i].ThankYou + "</td>");
+      tr.append("<td>" + data[i].Watts + "</td>");
+      tr.append("<td>" + data[i].Status + "</td>");
+      tr.append("<td>" + data[i].Local + "</td>");
       $('table').append(tr);
     }
     console.log(data);
