@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <body>
-  <p id="demo"></p>
+
   <div class="status">
         <!-- Menu elements are going to go here -->
     </div>
@@ -20,15 +20,25 @@ function showInfo(data, tabletop) {
 
    console.log(data);
    
-   var strStatus = "";
+   var strDryerStatus = "";
+   var strWasherStatus = "";
+   
    
 	for (var i = 0; i < data.length; i++) {
-        console.log(data[i].status);
-         strStatus += data[i].status +"<br>";
+        console.log(data[i].appliance);
+        
+        if(data[i].appliance === "Dryer") 
+        {
+         	strDryerStatus = data[i].status;
+         } 
+         else if (data[i].appliance === "Washer"){
+         	strWasherStatus = data[i].status;
+         }
+         
     }
     
-   document.getElementById("demo").innerHTML = strStatus;
-   
+   document.getElementById("dryerStatus").innerHTML = strDryerStatus;
+   document.getElementById("washerStatus").innerHTML = strWasherStatus;
    
 }
 
@@ -38,13 +48,14 @@ function showInfo(data, tabletop) {
 <table id="customers"">
 <tr><td style="text-align:center">Washer</td><td> </td><td style="text-align:center">Dryer</td></tr>
 <tr><td><img src="washingmachine.jpg" style="width:114px;height:140px;"></td><td> </td>
-<td><img src="dryer.jpg" style="width:114px;height:140px;"></td><tr>	
+<td><img src="dryer.jpg" style="width:114px;height:140px;"></td><tr>
+<tr><td id="washerStatus"></td><td></td><td id="dryerStatus"></td></tr>	
     </body>
  <style>   
     #customers {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse; text-align:center;
-  width: 100%;
+  width: 50%;
   
 }
 </style>
