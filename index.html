@@ -40,19 +40,32 @@ function showInfo(data, tabletop) {
    document.getElementById("dryerStatus").innerHTML = strDryerStatus;
    document.getElementById("washerStatus").innerHTML = strWasherStatus;
    
+   var cells = document.getElementById("appstatus").getElementsByTagName("td");
+
+for (var i = 0; i < cells.length; i++) 
+{
+    if (cells[i].innerHTML == "Running") 
+    {
+        cells[i].style.backgroundColor = "red";    
+    }
+    else if (cells[i].innerHTML == "Not Running") 
+    {
+        cells[i].style.backgroundColor = "green";
+    }
+}
 }
 
   window.addEventListener('DOMContentLoaded', init)
 
 </script>
-<table id="customers"">
-<tr><td style="text-align:center">Washer</td><td> </td><td style="text-align:center">Dryer</td></tr>
+<table id="appstatus"">
+<tr><td>Washer</td><td> </td><td>Dryer</td></tr>
 <tr><td><img src="washingmachine.jpg" style="width:114px;height:140px;"></td><td> </td>
 <td><img src="dryer.jpg" style="width:114px;height:140px;"></td><tr>
-<tr><td id="washerStatus"></td><td></td><td id="dryerStatus"></td></tr>	
+<tr><td id="washerStatus" ></td><td></td><td id="dryerStatus"></td></tr>	
     </body>
  <style>   
-    #customers {
+    #appstatus {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse; text-align:center;
   width: 50%;
