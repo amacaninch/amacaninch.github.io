@@ -19,16 +19,21 @@ function showInfo(data, tabletop) {
 
    console.log(data);
    
+   for (var key in data) {
+    if (p.hasOwnProperty(key)) {
+        console.log(key + " -> " + p[key]);
+    }
+   
    // create inner HTML for div.menu
-            var statusHtml = '';
-            data.status.elements.forEach(function(element) {
-                statusHtml += '<h3>' + element.watts + '</h3>' + 
-                            '<h4>' + element.status + '</h4>' + 
-                            '<p>' + element.local + '</p>';
-            })
-            // replace inner HTML of div.menu
-            var statusElement = document.getElementsByClassName("menu")[0];
-            statusElementElement.innerHTML = statusHtml;
+            //var statusHtml = '';
+          //  data.status.elements.forEach(function(element) {
+          //      statusHtml += '<h3>' + element.watts + '</h3>' + 
+          //                  '<h4>' + element.status + '</h4>' + 
+          //                  '<p>' + element.local + '</p>';
+          //  })
+          //  // replace inner HTML of div.menu
+          //  var statusElement = document.getElementsByClassName("menu")[0];
+          //  statusElementElement.innerHTML = statusHtml;
 }
 
   window.addEventListener('DOMContentLoaded', init)
