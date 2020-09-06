@@ -15,11 +15,23 @@ var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1PjFVGceYxgcc
 function showInfo(data, tabletop) {
 
    console.log(data);
+   
+   // create inner HTML for div.menu
+            var menuHtml = '';
+            data.menu.elements.forEach(function(element) {
+                menuHtml += '<h3>' + element.name + '</h3>' + 
+                            '<h4>' + element.price + '</h4>' + 
+                            '<p>' + element.description + '</p>';
+            })
+            // replace inner HTML of div.menu
+            var menuElement = document.getElementsByClassName("menu")[0];
+            menuElement.innerHTML = menuHtml;
 }
 
   window.addEventListener('DOMContentLoaded', init)
 
 </script>
+data[0]
 	Hello World!
     </body>
 </html>
