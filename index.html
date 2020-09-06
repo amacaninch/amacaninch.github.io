@@ -20,10 +20,18 @@ function showInfo(data, tabletop) {
 
    console.log(data);
    
- data.each(function (value, index) {
-     console.log('Data in index: ' + index + ' is: ' + value);
- });
-    
+<h1>data from google sheets</h1>
+    <ul>
+      {data.map((item, i) => (
+        <Fragment key={i}>
+          <li>URL -- {item.URL}</li>
+          <li>Email - {item.email}</li>
+          <li>Token - {item.token}</li>
+          <br />
+        </Fragment>
+      ))}
+    </ul>
+  </>
    
    // create inner HTML for div.menu
             //var statusHtml = '';
