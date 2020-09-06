@@ -42,13 +42,13 @@ function showInfo(data, tabletop) {
 
 for (var i = 0; i < cells.length; i++) 
 {
-    if (cells[i].innerHTML == "Running") 
+    if (cells[i].innerHTML == "In Use") 
     {
         cells[i].style.backgroundColor = "red";    
     }
-    else if (cells[i].innerHTML == "Not Running") 
+    else if (cells[i].innerHTML == "Available") 
     {
-        cells[i].style.backgroundColor = "#85e085";
+        cells[i].style.backgroundColor = "#85e085"
     }
 }
 }
