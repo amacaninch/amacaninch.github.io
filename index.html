@@ -22,9 +22,9 @@ function showInfo(data, tabletop) {
    // create inner HTML for div.menu
             var menuHtml = '';
             data.menu.elements.forEach(function(element) {
-                menuHtml += '<h3>' + element.name + '</h3>' + 
-                            '<h4>' + element.price + '</h4>' + 
-                            '<p>' + element.description + '</p>';
+                menuHtml += '<h3>' + element.watts + '</h3>' + 
+                            '<h4>' + element.status + '</h4>' + 
+                            '<p>' + element.local + '</p>';
             })
             // replace inner HTML of div.menu
             var menuElement = document.getElementsByClassName("menu")[0];
