@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <body>
-  <div class="menu">
+  <div class="status">
         <!-- Menu elements are going to go here -->
     </div>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
@@ -20,15 +20,15 @@ function showInfo(data, tabletop) {
    console.log(data);
    
    // create inner HTML for div.menu
-            var menuHtml = '';
-            data.menu.elements.forEach(function(element) {
-                menuHtml += '<h3>' + element.watts + '</h3>' + 
+            var statusHtml = '';
+            data.status.elements.forEach(function(element) {
+                statusHtml += '<h3>' + element.watts + '</h3>' + 
                             '<h4>' + element.status + '</h4>' + 
                             '<p>' + element.local + '</p>';
             })
             // replace inner HTML of div.menu
-            var menuElement = document.getElementsByClassName("menu")[0];
-            menuElement.innerHTML = menuHtml;
+            var statusElement = document.getElementsByClassName("menu")[0];
+            statusElementElement.innerHTML = statusHtml;
 }
 
   window.addEventListener('DOMContentLoaded', init)
