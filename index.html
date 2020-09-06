@@ -20,13 +20,10 @@ function showInfo(data, tabletop) {
 
    console.log(data);
    
-   for (var key in data) {
-    if (data.hasOwnProperty(key)) {
-        console.log(key + " -> " + key[1]);
-    }}
+ data.each(function (value, index) {
+     console.log('Data in index: ' + index + ' is: ' + value);
+ });
     
-    var obj = JSON.parse(data);
-    document.getElementById("demo").innerHTML = obj.status + ", " + obj.watts;
    
    // create inner HTML for div.menu
             //var statusHtml = '';
