@@ -20,18 +20,9 @@ function showInfo(data, tabletop) {
 
    console.log(data);
    
-<h1>data from google sheets</h1>
-    <ul>
-      {data.map((item, i) => (
-        <Fragment key={i}>
-          <li>URL -- {item.local}</li>
-          <li>Email - {item.statusl}</li>
-          <li>Token - {item.watts}</li>
-          <br />
-        </Fragment>
-      ))}
-    </ul>
-  </>
+for (var i = 0; i < data.length; i++) {
+        console.log(data[i].name);
+    }
    
    // create inner HTML for div.menu
             //var statusHtml = '';
