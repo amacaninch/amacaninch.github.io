@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <body>
+  <p id="demo"></p>
   <div class="status">
         <!-- Menu elements are going to go here -->
     </div>
@@ -23,6 +24,9 @@ function showInfo(data, tabletop) {
     if (data.hasOwnProperty(key)) {
         console.log(key + " -> " + key[1]);
     }}
+    
+    var obj = JSON.parse(data);
+    document.getElementById("demo").innerHTML = obj.status + ", " + obj.watts;
    
    // create inner HTML for div.menu
             //var statusHtml = '';
