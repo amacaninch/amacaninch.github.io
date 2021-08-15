@@ -4,11 +4,11 @@
 
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.6.3/tabletop.js'></script>
-<script type='text/javascript'>    
+<script type='text/javascript'>
 
-var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1PjFVGceYxgccEl2E-TDyEMUK2Y3SgVoYcDL1mb376Kc/edit#gid=242931801';
+var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1GnsS3LuaGk183e-dYQFLnXZf5oCApHit0UktP-ZYU2g/edit?usp=sharing';
 
-  function init() { 
+  function init() {
     Tabletop.init( { key: publicSpreadsheetUrl,
                      callback: showInfo,
                      simpleSheet: true } )
@@ -17,36 +17,36 @@ var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1PjFVGceYxgcc
 function showInfo(data, tabletop) {
 
    console.log(data);
-   
+
    var strDryerStatus = "";
    var strWasherStatus = "";
-   
-   
+
+
 	for (var i = 0; i < data.length; i++) {
         console.log(data[i].appliance);
-        
-        if(data[i].appliance === "Dryer") 
+
+        if(data[i].appliance === "Dryer")
         {
          	strDryerStatus = data[i].status;
-         } 
+         }
          else if (data[i].appliance === "Washer"){
          	strWasherStatus = data[i].status;
          }
-         
+
     }
-    
+
    document.getElementById("dryerStatus").innerHTML = strDryerStatus;
    document.getElementById("washerStatus").innerHTML = strWasherStatus;
-   
+
    var cells = document.getElementById("appstatus").getElementsByTagName("td");
 
-for (var i = 0; i < cells.length; i++) 
+for (var i = 0; i < cells.length; i++)
 {
-    if (cells[i].innerHTML == "In Use") 
+    if (cells[i].innerHTML == "In Use")
     {
-        cells[i].style.backgroundColor = "red";    
+        cells[i].style.backgroundColor = "red";
     }
-    else if (cells[i].innerHTML == "Available") 
+    else if (cells[i].innerHTML == "Available")
     {
         cells[i].style.backgroundColor = "#85e085"
     }
@@ -61,21 +61,18 @@ for (var i = 0; i < cells.length; i++)
 <tr><td><img src="dryer.jpg" style="width:228px;height:280px;"></td><td> </td>
 <td><img src="washingmachine.jpg" style="width:228px;height:280px;"></td></tr>
 <tr>
-<tr><td id="dryerStatus" ></td><td></td><td id="washerStatus"></td></tr>	
+<tr><td id="dryerStatus" ></td><td></td><td id="washerStatus"></td></tr>
 
 <button onClick="window.location.reload();">Refresh Page</button>
 
     </body>
- <style>   
+ <style>
     #appstatus {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   font-size:32px;
   border-collapse: collapse; text-align:center;
   width: 100%;
-  
+
 }
 </style>
 </html>
-
-
-
